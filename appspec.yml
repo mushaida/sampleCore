@@ -1,0 +1,8 @@
+version: 0.0
+
+os: windows 
+
+files:
+    - source: sampleCore/build_output/
+      destination: C:\inetpub\wwwroot\sampleCore
+      

@@ -1,0 +1,26 @@
+version: 0.2
+
+env:
+  variables:
+    PROJECT: sampleCore
+    DOTNET: 3.1
+phases:
+    install:
+        runtime-versions:
+            dotnet: 3.1
+        
+    build:
+        commands:
+           - echo Build started  on `date`
+           - dotnet restore
+           - dotnet build -c Release ./SampleWebAPI.csproj
+           - dotnet publish -c release -o ./build_output SampleWebAPI.csproj
+          # - dotnet test -c Release ./CoreWithNUnit.Test/CoreWithNUnit.Test.csproj
+           #- nuget restore
+           #- dotnet vstest CoreWithNUnit.Test/bin/Debug/netcoreapp2.1/CoreWithNUnit.Test.dll
+           
+artifacts:
+ files:
+    - sampleCore/build_output/**/*
+    - scripts/**/*
+    - appspec.yml    
