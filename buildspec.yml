@@ -14,7 +14,7 @@ phases:
            - echo Build started  on `date`
            - dotnet restore
            - dotnet build -c Release ./SampleWebAPI.csproj
-           - dotnet publish -c release -o ./build_output SampleWebAPI.csproj
+         #  - dotnet publish -c release -o ./build_output SampleWebAPI.csproj
           # - dotnet test -c Release ./CoreWithNUnit.Test/CoreWithNUnit.Test.csproj
            #- nuget restore
            #- dotnet vstest CoreWithNUnit.Test/bin/Debug/netcoreapp2.1/CoreWithNUnit.Test.dll
